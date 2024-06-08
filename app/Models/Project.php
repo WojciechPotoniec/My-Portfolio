@@ -11,7 +11,7 @@ use App\Models\Technology;
 class Project extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','image', 'content', 'slug', 'type_id'];
+    protected $fillable = ['title','image', 'content', 'slug', 'type_id', 'technology_id'];
 
     public static function generateSlug($title){
         $slug = Str::slug($title, '-');
