@@ -34,19 +34,19 @@
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
-        <!-- <div class="form-group mb-3">
-                <p>Select Type:</p>
-                @foreach ($types as $type)
+         <div class="form-group mb-3">
+                <p>Select Technologies:</p>
+                @foreach ($technologies as $technology)
                     <div>
-                        <select type="checkbox" name="types[]" value="{{ $type->id }}" class="form-check-input"
-                            {{ in_array($type->id, old('types', [])) ? 'checked' : '' }}>
-                        <label for="" class="form-check-label">{{ $type->name }}</label>
+                        <input type="checkbox" name="technologies[]" value="{{ $technology->id }}" class="form-check-input"
+                            {{ in_array($technology->id, old('technologys', [])) ? 'checked' : '' }}>
+                        <label for="" class="form-check-label">{{ $technology->name }}</label>
                     </div>
                 @endforeach
-                @error('types')
+                @error('technologies')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div> -->
+            </div>
             <div class="mb-3">
                 <label for="type_id" class="form-label">Select type</label>
                 <select name="type_id" id="type_id" class="form-control @error('type_id') is-invalid @enderror">

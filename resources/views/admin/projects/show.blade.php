@@ -18,6 +18,14 @@
     </div>
     <p>{!!$project->content!!}</p>
     <img src="{{asset('storage/' . $project->image)}}" alt="{{$project->title}}">
+    @if ($project->type)
+    <p>Type: {{$project->type->name}}</p>
+    @endif
+    @if ($project->technologies)
+    @foreach ($project->technologies as $technology)
+    <span class="badge bg-primary">{{$technology->name}}</span>
+    @endforeach
+    @endif
 </section>
 @include('partials.modal-delete')
 @endsection

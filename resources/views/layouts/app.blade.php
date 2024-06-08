@@ -48,6 +48,10 @@
                                         <a href="{{url('admin/types') }}" class="nav-link px-0 link-light"> <span
                                                 class="d-none d-sm-inline">{{ __('Types') }}</span></a>
                                     </li>
+                                    <li class="w-100">
+                                        <a href="{{url('admin/technologies') }}" class="nav-link px-0 link-light"> <span
+                                                class="d-none d-sm-inline">{{ __('Technologies') }}</span></a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
