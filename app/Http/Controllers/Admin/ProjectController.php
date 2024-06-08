@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateProjectRequest;
 
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // Uso questo per gestire i file di upload del client
@@ -34,7 +35,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.projects.create', compact('types'));
+        $technologies = Technology::all();
+        return view('admin.projects.create', compact('types', 'technologies'));
     }
 
     /**
@@ -50,6 +52,9 @@ class ProjectController extends Controller
             $form_data['image'] = $path_img;
             }
         $newPost = Project::create($form_data);
+        if ($request->has('technologies')) {
+            $newPost->technologies()->attach($request->technologies);
+        }
         return redirect()->route('admin.projects.show', $newPost->slug);
     }
 
@@ -66,7 +71,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -88,6 +95,11 @@ class ProjectController extends Controller
         }
         // DB::enableQueryLog(); 
         $project->update($form_data); // query da eseguire
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($request->technologies);
+        } else{
+            $project->technologies()->sync([]);
+        }
         // $query = DB::getQueryLog();
         //  dd($query);
         return redirect()->route('admin.projects.show', $project->slug);
