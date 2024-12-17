@@ -37,20 +37,24 @@
                             <li>
                                 <a href="#submenu1" data-bs-toggle="collapse"
                                     class="nav-link px-0 align-middle link-light">
-                                    <i class="fs-4 bi-speedometer2"></i><span
-                                        class="ms-1 d-none d-sm-inline">Admin Dashboard</span> </a>
+                                    <i class="fs-4 bi-speedometer2"></i>
+                                    <span class="ms-1 d-none d-sm-inline">Admin Dashboard</span>
+                                </a>
                                 <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                     <li class="w-100">
-                                        <a href="{{url('admin/projects') }}" class="nav-link px-0 link-light"> <span
-                                                class="d-none d-sm-inline">{{ __('Projects') }}</span></a>
+                                        <a href="{{url('admin/projects') }}" class="nav-link px-0 link-light">
+                                            <span class="d-none d-sm-inline">{{ __('Projects') }}</span>
+                                        </a>
                                     </li>
                                     <li class="w-100">
-                                        <a href="{{url('admin/types') }}" class="nav-link px-0 link-light"> <span
-                                                class="d-none d-sm-inline">{{ __('Types') }}</span></a>
+                                        <a href="{{url('admin/types') }}" class="nav-link px-0 link-light">
+                                            <span class="d-none d-sm-inline">{{ __('Types') }}</span>
+                                        </a>
                                     </li>
                                     <li class="w-100">
-                                        <a href="{{url('admin/technologies') }}" class="nav-link px-0 link-light"> <span
-                                                class="d-none d-sm-inline">{{ __('Technologies') }}</span></a>
+                                        <a href="{{url('admin/technologies') }}" class="nav-link px-0 link-light">
+                                            <span class="d-none d-sm-inline">{{ __('Technologies') }}</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
